@@ -1,28 +1,20 @@
-import React,{useState, useCallback} from 'react'
-import { ChildAria } from './CildAria';
+import { BrowserRouter, Link } from "react-router-dom";
+import { Router } from "./router/Router";
 
 export const App = () => {
-
-  const[text, setText] = useState('')
-  const[open, setOpen] = useState(false)
-
-  const onChangeText = (event) => setText(event.target.value)
-
-  const onClickOpen = () => setOpen(true)
-
-  const onClickClose = useCallback(() => setOpen(false), [setOpen])
-
-  
   return (
-    <div>
-      <h1> React Start</h1>
-      <input value={text} onChange={onChangeText}/>
-      <br />
-      <br />
-      <button onClick={onClickOpen}>表示</button>
-      <ChildAria open={open} onClickClose={onClickClose}/>
-    </div>
-  );
+    <>
+      <div className="container4">
+        <BrowserRouter>
+          <Link to='/'>Home</Link>
+          <br />
+          <Link to='/page1'>Page1</Link>
+          <br />
+          <Link to='/page2'>Page2</Link>
+          <br />
+          <Router />
+        </BrowserRouter>
+      </div>
+    </>
+  )
 }
-
-
