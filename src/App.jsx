@@ -1,14 +1,8 @@
-import { PrimaryButton } from "./components/atoms/button/PrimaryButton"
-import { SecondaryButton } from "./components/atoms/button/SecondaryButton"
-
-// import './style.css'
-
+import { Router } from "./router/Router";
+import "./styles.css";
 
 export const App = () => {
   return (
-    <>
-      <PrimaryButton>押す</PrimaryButton>
-      <SecondaryButton>テスト</SecondaryButton>
-    </>
+    <Router />
   )
 }
